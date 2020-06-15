@@ -1,0 +1,19 @@
+{
+  "name": "angulardrawingapp",
+  "version": "1.0.0",
+  "description": "Collab drawing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vjsargeni:FatPeePee41@github.com/vjsargeni/AngularDrawingApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vjsargeni/AngularDrawingApp/issues"
+  },
+  "homepage": "https://github.com/vjsargeni/AngularDrawingApp#readme"
+}
