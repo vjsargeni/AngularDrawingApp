@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CanvasDirective } from './canvas.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { PusherService } from './pusher.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PusherService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

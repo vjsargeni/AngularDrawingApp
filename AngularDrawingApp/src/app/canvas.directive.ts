@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { v4 } from 'uuid';
 import { HttpClient } from '@angular/common/http';
+import { PusherService } from './pusher.service';
 
 declare interface Position {
   offsetX: number;
@@ -18,7 +19,8 @@ declare interface Position {
 export class CanvasDirective implements AfterViewInit {
   constructor(
     private el: ElementRef,
-    private http: HttpClient
+    private http: HttpClient,
+    private pusher: PusherService
   ) {
     // We use the ElementRef to get direct access to the canvas element. Here we set up the properties of the element. 
     this.canvas = this.el.nativeElement;
@@ -122,5 +124,14 @@ export class CanvasDirective implements AfterViewInit {
       offsetY,
     };
   }
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    const channel = this.pusher.init();
+    channel.bind('draw', (data) => {
+      if (data.userId !== this.userId) {
+        data.line.forEach((position) => {
+          this.draw(position.start, position.stop, this.guestStrokeStyle);
+        });
+      }
+    });
+  }
 }

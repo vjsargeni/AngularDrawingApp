@@ -90,7 +90,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["./AngularDrawingApp/node_modules/pusher-js/dist/web/pusher.min.js"]
           }
         },
         "lint": {
