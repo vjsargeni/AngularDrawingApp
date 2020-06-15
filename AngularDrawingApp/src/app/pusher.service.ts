@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { env } from 'process';
 declare const Pusher: any;
 
 @Injectable()
 export class PusherService {
   constructor() {
-    const pusher = new Pusher('00b943d62037583d5955', {
-      cluster: 'us2'
+    const pusher = new Pusher("00b943d62037583d5955", {
+      cluster: 'eu',
     });
-    this.channel = pusher.subscribe('painting');
+    this.channel = pusher.subscribe('location');
   }
   channel;
+
   public init() {
     return this.channel;
   }
